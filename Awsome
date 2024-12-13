@@ -1,0 +1,131 @@
+// ==UserScript==
+// @name         Blooket Hacks
+// @namespace    
+// @version      1
+// @description  Some Useful Blooket Hacks.
+// @author       Spikesee3
+// @match        *://*.blooket.com/*
+// @match        *://blooket.com/*
+// @icon         https://www.google.com/s2/favicons?domain=blooket.com
+// @run-at       document-end
+// @supportURL   
+// @license      
+// @source       ilities.js
+// ==/UserScript==
+ 
+(() => {
+    let n = document.createElement("iframe");
+ 
+    document.body.append(n);
+ 
+    window.alert = n.contentWindow.alert.bind(window);
+ 
+    window.prompt = n.contentWindow.prompt.bind(window);
+ 
+    window.confirm = n.contentWindow.confirm.bind(window);
+ 
+    n.remove();
+})();
+ 
+(() => {
+    let style = document.createElement("style");
+ 
+    style.innerHTML = `details > summary {
+ 
+    cursor: pointer;
+ 
+    transition: 0.15s;
+ 
+    list-style: none;
+ 
+}
+ 
+details > summary:hover {
+ 
+    color: hsl(0, 0%, 50%)
+ 
+}
+ 
+details > summary::-webkit-details-marker {
+ 
+    display: none;
+ 
+}
+ 
+details summary ~ * {
+ 
+    animation: sweep .5s ease-in-out;
+ 
+}
+ 
+ 
+ 
+@keyframes sweep {
+ 
+    0%    {opacity: 0; transform: translateY(-10px)}
+ 
+    100%  {opacity: 1; transform: translateY(0)}
+ 
+}
+ 
+.cheat {
+ 
+    border: none;
+ 
+    background: hsl(0, 0%, 20%);
+ 
+    padding: 5px;
+ 
+    margin: 3px;
+ 
+    width: 60%;
+ 
+    color: hsl(0, 0%, 100%);
+ 
+    transition: 0.2s;
+ 
+    border-radius: 5px;
+ 
+    cursor: pointer;
+ 
+}
+ 
+.cheat:hover {
+ 
+    background: hsl(0, 0%, 30%);
+ 
+}`;
+ 
+    const GUI = document.createElement("div");
+ 
+    GUI.appendChild(style);
+ 
+    GUI.style.width = "400px";
+ 
+    //GUI.style.height = '500px';
+ 
+    GUI.style.background = "hsl(0, 0%, 10%)";
+ 
+    GUI.style.borderRadius = "10px";
+ 
+    GUI.style.position = "absolute";
+ 
+    GUI.style.textAlign = "center";
+ 
+    GUI.style.fontFamily = "Nunito";
+ 
+    GUI.style.color = "white";
+ 
+    GUI.style.overflow = "hidden";
+ 
+    GUI.style.top = "50px";
+ 
+    GUI.style.left = "50px";
+ 
+    var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+ 
+    GUI.onmousedown = (e = window.event) => {
+        e.preventDefault();
